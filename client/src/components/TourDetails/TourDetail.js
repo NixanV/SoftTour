@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import * as tourService from '../../services/tourService';
 import styles from "./styles/details.module.css"
 import eifel from './images/Eiffel-tower.jpg'
@@ -9,6 +9,7 @@ export const TourDetail = () => {
     const { tourId } = useParams();
     const [tour, setTour] = useState({})
 
+    const navigate  = useNavigate();
 
     useEffect(() => {
         tourService.getOne(tourId)
@@ -32,7 +33,7 @@ export const TourDetail = () => {
             additional information.
           </p>
           <h4 className={styles["author"]}>Wrote by: Here should stay author's name!</h4>
-          <button className={styles["back-button"]}>
+          <button className={styles["back-button"]} onClick={() => navigate(-1)}>
             <i className="fas fa-chevron-circle-left"/>
             Back
           </button>
