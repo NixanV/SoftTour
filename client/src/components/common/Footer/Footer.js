@@ -25,7 +25,7 @@ export const Footer = () => {
 
 
             <section className={styles["down-footer"]}>
-                <p>SoftTour &copy; 2023 - All rights reserved: Site by Nikolay Petrov</p>
+                <p>SoftTour &copy; 2023 - All rights reserved: Created by Nikolay Petrov</p>
             </section>
 
         </footer>
