@@ -1,9 +1,9 @@
-@import "../src/components/common/Header/header.module.css";
+/* @import "../src/components/common/Header/header.module.css";
 @import "../src/components/Home/styles/main.module.css";
 @import "../src/components/common/Footer/footer.module.css";
-@import "../src/components/Tours/styles/tour.module.css";
-@import "login-form.css";
+@import "../src/components/Tours/styles/tour.module.css"; */
+/* @import "login-form.css"; */
 
-html{
+body{
     background-color: #f7f5f4;
 }

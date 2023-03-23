@@ -19,14 +19,14 @@ export const TourItem = ({
                         {destination}
                     </h2>
                     <p>
-                        {description}
+                        For more information click "See more" button
                     </p>
                     <p>
                         <span>
                            {author}
                         </span>
                     </p>
-                    <Link to="#" className={styles["details-button"]}>See more</Link>
+                    <Link to={`/tours/${_id}`} className={styles["details-button"]}>See more</Link>
             </div>
         </div>
     </div>
