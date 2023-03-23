@@ -5,6 +5,10 @@
     height: 700px;
 }
 
+img{
+    margin: 0px
+}
+
 .main-section{
     background-color: #2980b9;
     text-align: center;
