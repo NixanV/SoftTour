@@ -5,8 +5,18 @@ import cruise from './images/cruise.jpg'
 import dubai from './images/dubai.jpg'
 import full_bag from './images/full_bag.jpg'
 import pointer from './images/vector_pointer.jpg'
+import {Link, useNavigate} from 'react-router-dom'
+
+
 
 export const Home = () => {
+    const navigate = useNavigate();
+
+    const navigateToTours = () => {
+        navigate('/tours')
+    }
+
+    
     return (
         <main>
         <img className={styles["sydney"]} src={sydney} alt="" />
@@ -30,7 +40,7 @@ export const Home = () => {
                 <p>
                     Visit all trips on our site and choose where your next trip will be!
                 </p>
-                <button className={styles["button-tours"]}>Let's go</button>
+                <button className={styles["button-tours"]} onClick={navigateToTours}>Let's go</button>
             </div>
             <div className={styles["div-prepare"]}>
                 <div className={styles["image-wrap"]}>
