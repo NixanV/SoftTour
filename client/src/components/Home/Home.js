@@ -5,7 +5,7 @@ import cruise from './images/cruise.jpg'
 import dubai from './images/dubai.jpg'
 import full_bag from './images/full_bag.jpg'
 import pointer from './images/vector_pointer.jpg'
-import {Link, useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -16,7 +16,7 @@ export const Home = () => {
         navigate('/tours')
     }
 
-    
+
     return (
         <main>
         <img className={styles["sydney"]} src={sydney} alt="" />
