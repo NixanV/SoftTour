@@ -20,13 +20,13 @@ export const Header = () => {
                         <a href="">Profile</a>
                     </li>
                     <li>
-                        <a href="">Login</a>
+                        <Link to="/login">Login</Link>
                     </li>
                     <li>
                         <a href="">Logout</a>
                     </li>
                     <li>
-                        <a href="">Register</a>
+                        <Link to="/register">Register</Link>
                     </li>
                 </ul>
             </nav>

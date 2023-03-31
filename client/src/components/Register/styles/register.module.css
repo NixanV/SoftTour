@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,300;1,400&display=swap');
+
+
+.form-wrapper{
+    width: 550px;
+    height: 400px;
+    background-color: #dbdbdb;
+    font-family: "Source Serif Pro", Helvetica, sans-serif;
+    position: relative;
+    border-radius: 15px;
+    
+}
+
+.whole{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.firstName-div{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+
+.lastName-div{
+    position: absolute;
+    top: 30px;
+    left: 310px;
+}
+
+.email-div{
+    position: absolute;
+    top: 100px;
+    left: 50px;
+}
+
+#email{
+    width: 400px;
+}
+
+.password-div{
+    position: absolute;
+    top: 170px;
+    left: 50px;
+}
+
+#password{
+    width: 400px;
+}
+
+.conf-password-div{
+    position: absolute;
+    top: 240px;
+    left: 50px;
+}
+
+#confPassword{
+    width: 400px;
+}
+
+p{
+    position: absolute;
+    bottom: 10px;
+    left: 50px
+}
+label{
+    margin-right: 10px;
+    display: block;
+}
+
+input{
+    font-size: 20px;
+    display: block;
+    width: 220px;
+}
+
+a{
+    text-decoration: none;
+    color: #0A66C2;
+}
+
+
+button{
+    position: absolute;
+    bottom: 55px;
+    right: 210px;
+    width: 180px;
+    align-items: center;
+    background-color: #0A66C2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "Source Serif Pro", Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    vertical-align: middle;
+}
+

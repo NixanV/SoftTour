@@ -1,5 +1,6 @@
 import computer from "./images/draw2.webp"
 import styles from './styles/login.module.css'
+import { Link } from "react-router-dom"
 
 export const Login = () => {
     return (
@@ -12,7 +13,7 @@ export const Login = () => {
                 <form>
 
                     <div className={styles["email-div"]}>
-                        <input type="email" id="email" className={styles["email-input"]} placeholder="peter@abv.bg" />
+                        <input type="email" id="email" className={styles["email-input"]} placeholder="Enter email" />
                         <label className={styles["form-label"]} htmlFor="email">Email address</label>
                     </div>
 
@@ -24,7 +25,7 @@ export const Login = () => {
 
                     <div className="button-div">
                         <button type="button">Login</button>
-                        <p>Don't have an account? <a href="#!">Register</a></p>
+                        <p>Don't have an account? <Link to="/register">Register</Link></p>
                     </div>
 
                 </form>
