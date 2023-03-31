@@ -4,7 +4,7 @@ import * as tourService from '../../services/tourService';
 import styles from "./styles/details.module.css"
 import eifel from './images/Eiffel-tower.jpg'
 
-export const TourDetail = ({}) => {
+export const TourDetail = () => {
     //const [author, setAuthor] = useState('');
     const { tourId } = useParams();
     const [tour, setTour] = useState({})

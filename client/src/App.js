@@ -4,6 +4,7 @@ import {Route, Routes} from "react-router-dom"
 import { Footer } from "./components/common/Footer/Footer";
 import { Header } from "./components/common/Header/Header";
 import { Home } from "./components/Home/Home";
+import { Login } from "./components/Login/Login";
 import { TourDetail } from "./components/TourDetails/TourDetail";
 import { Tours } from "./components/Tours/Tours";
 import * as tourService from './services/tourService';
@@ -28,6 +29,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/tours" element={<Tours tours={tours} />}/>
                     <Route path="/tours/:tourId" element={<TourDetail />} />
+                    <Route path="/login" element={<Login />}/>
                 </Routes>
             </main>
             <Footer />

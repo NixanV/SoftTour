@@ -67,3 +67,9 @@ button{
 .form-div{
     margin: auto 0px;
 }
+
+.section-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+}

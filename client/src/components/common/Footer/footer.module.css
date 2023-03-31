@@ -40,3 +40,11 @@
     margin: 0px;
     padding-top: 10px;
 }
+
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
