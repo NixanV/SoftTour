@@ -35,9 +35,7 @@
     left: 50px;
 }
 
-#email{
-    width: 400px;
-}
+
 
 .password-div{
     position: absolute;
@@ -45,9 +43,7 @@
     left: 50px;
 }
 
-#password{
-    width: 400px;
-}
+
 
 .conf-password-div{
     position: absolute;
@@ -55,9 +51,7 @@
     left: 50px;
 }
 
-#confPassword{
-    width: 400px;
-}
+
 
 
 .have-account{
@@ -75,6 +69,18 @@
     font-size: 20px;
     display: block;
     width: 220px;
+}
+
+#email{
+    width: 400px;
+}
+
+#password{
+    width: 400px;
+}
+
+#confPassword{
+    width: 400px;
 }
 
 a{
