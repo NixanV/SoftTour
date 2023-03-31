@@ -21,7 +21,7 @@ img{
 
 }
 
-input{
+#email, #password{
     width: 190px;
     font-size: 17px;
     margin-right: 7px;
@@ -35,7 +35,7 @@ input{
     margin-bottom: 15px;
 }
 
-button{
+.login-button{
     width: 310px;
     align-items: center;
     background-color: #0A66C2;

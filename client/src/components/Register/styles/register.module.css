@@ -59,17 +59,19 @@
     width: 400px;
 }
 
-p{
+
+.have-account{
     position: absolute;
     bottom: 10px;
     left: 50px
 }
-label{
+
+.first-name-lbl, .last-name-lbl, .email-lbl, .password-lbl, .conf-password-lbl {
     margin-right: 10px;
     display: block;
 }
 
-input{
+#fName, #last-name, #email, #password, #confPassword{
     font-size: 20px;
     display: block;
     width: 220px;

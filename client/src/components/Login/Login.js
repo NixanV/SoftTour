@@ -24,8 +24,8 @@ export const Login = () => {
                     </div>
 
                     <div className="button-div">
-                        <button type="button">Login</button>
-                        <p>Don't have an account? <Link to="/register">Register</Link></p>
+                        <button type="button" className={styles["login-button"]}>Login</button>
+                        <p className="dont-have-account">Don't have an account? <Link to="/register">Register</Link></p>
                     </div>
 
                 </form>
