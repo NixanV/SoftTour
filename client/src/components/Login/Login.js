@@ -2,15 +2,20 @@ import computer from "./images/draw2.webp"
 import styles from './styles/login.module.css'
 import * as service from '../../services/authService'
 import { Link, useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export const Login = () => {
     
     const navigate = useNavigate();
+    const [items, setItems] = useState([])
     const [data, setData] = useState({
         email: '',
         password: ''
     });
+
+    useEffect(() => {
+        localStorage.setItem("items", JSON.stringify())
+    }, [items])
 
     const onChangeHandler = (ev) => {
         setData(state => ({
@@ -22,7 +27,7 @@ export const Login = () => {
     const submitHandler = (ev, userInfo) => {
         ev.preventDefault();
 
-        if(userInfo.email === "" && userInfo.password === ""){
+        if(userInfo.email === "" || userInfo.password === ""){
             alert("Should fill inputs!")
         }
         else{
@@ -32,7 +37,11 @@ export const Login = () => {
                 service.login(userInfo)
                     .then(res => {
                         if(!res.message){
-                            
+                            setItems(Object.values(res))
+                            console.log(res)
+                            navigate('/')
+                        }else{
+                            alert("Invalid email and password")
                         }
                     })
             }
@@ -47,7 +56,7 @@ export const Login = () => {
                 <img src={computer} alt="Sample" />
             </div>
             <div className={styles["form-div"]}>
-                <form>
+                <form onSubmit={(ev) => submitHandler(ev, data)}>
 
                     <div className={styles["email-div"]}>
                         <input
@@ -55,11 +64,10 @@ export const Login = () => {
                             id="email"
                             className={styles["email-input"]}
                             name="email"
-                            placeholder="Enter
-                            email"
+                            placeholder="Enter email"
                             required
                             value={data.email}
-                            onChange={onChangeHandler}/>
+                            onChange={(e) => onChangeHandler(e)}/>
 
                         <label className={styles["form-label"]} htmlFor="email">Email address</label>
                     </div>
@@ -69,12 +77,11 @@ export const Login = () => {
                         <input
                             type="password"
                             id="password"
-                            placeholder="Enter
-                            password"
+                            placeholder="Enter password"
                             name="password"
                             required
                             value={data.password}
-                            onChange={onChangeHandler}/>
+                            onChange={(e) => onChangeHandler(e)}/>
 
                         <label className={styles["form-label"]} htmlFor="password">Password</label>
                     </div>

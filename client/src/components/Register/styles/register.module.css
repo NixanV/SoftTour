@@ -89,7 +89,7 @@ a{
 }
 
 
-button{
+.register-button{
     position: absolute;
     bottom: 55px;
     right: 210px;
