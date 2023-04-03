@@ -1,21 +1,19 @@
 import computer from "./images/draw2.webp"
 import styles from './styles/login.module.css'
-import * as service from '../../services/authService'
+import * as service from '../../services/userService'
 import { Link, useNavigate } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+import { AuthContext } from "../../contexts/authContext"
 
 export const Login = () => {
     
     const navigate = useNavigate();
-    const [items, setItems] = useState([])
     const [data, setData] = useState({
         email: '',
         password: ''
     });
 
-    useEffect(() => {
-        localStorage.setItem("items", JSON.stringify())
-    }, [items])
+    const {userLogin} = useContext(AuthContext);
 
     const onChangeHandler = (ev) => {
         setData(state => ({
@@ -23,6 +21,7 @@ export const Login = () => {
             [ev.target.name]: ev.target.value
         }));
     };
+
 
     const submitHandler = (ev, userInfo) => {
         ev.preventDefault();
@@ -32,19 +31,23 @@ export const Login = () => {
         }
         else{
             const pattern = new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$");
-
-            if(pattern.test(userInfo.email)){
-                service.login(userInfo)
-                    .then(res => {
-                        if(!res.message){
-                            setItems(Object.values(res))
-                            console.log(res)
-                            navigate('/')
-                        }else{
-                            alert("Invalid email and password")
-                        }
-                    })
+            try{
+                if(pattern.test(userInfo.email)){
+                    service.login(userInfo)
+                        .then(res => {
+                            if(!res.message){
+                                userLogin(res)
+                                navigate('/')
+                            }else{
+                                alert("Invalid email and password")
+                            }
+                        })
+                } 
             }
+            catch{
+                alert('error message')
+            }
+            
         }
     }
 
@@ -61,7 +64,7 @@ export const Login = () => {
                     <div className={styles["email-div"]}>
                         <input
                             type="email"
-                            id="email"
+                            id={styles["login-email"]}
                             className={styles["email-input"]}
                             name="email"
                             placeholder="Enter email"
@@ -76,7 +79,7 @@ export const Login = () => {
                     <div className={styles["password-div"]}>
                         <input
                             type="password"
-                            id="password"
+                            id={styles["login-password"]}
                             placeholder="Enter password"
                             name="password"
                             required
@@ -87,7 +90,7 @@ export const Login = () => {
                     </div>
 
                     <div className="button-div">
-                        <button type="button" className={styles["login-button"]}>Login</button>
+                        <input type="submit" className={styles["login-button"]} value="Login"/>
                         <p className="dont-have-account">Don't have an account? <Link to="/register">Register</Link></p>
                     </div>
 

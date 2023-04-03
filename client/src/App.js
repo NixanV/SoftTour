@@ -8,6 +8,7 @@ import { Login } from "./components/Login/Login";
 import { Register } from "./components/Register/Register";
 import { TourDetail } from "./components/TourDetails/TourDetail";
 import { Tours } from "./components/Tours/Tours";
+import { AuthProvider } from './contexts/authContext'
 import * as tourService from './services/tourService';
 
 function App() {
@@ -24,18 +25,21 @@ function App() {
 
     return (
         <div className="App">
-            <Header />
-            <main>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/tours" element={<Tours tours={tours} />}/>
-                    <Route path="/tours/:tourId" element={<TourDetail />} />
-                    <Route path="/login" element={<Login />}/>
-                    <Route path="/register" element={<Register />} />
-                </Routes>
-            </main>
-            <Footer />
+            <AuthProvider>
+                <Header />
+                        <main>
+                            <Routes>
+                                <Route path="/" element={<Home />} />
+                                <Route path="/tours" element={<Tours tours={tours} />}/>
+                                <Route path="/tours/:tourId" element={<TourDetail />} />
+                                <Route path="/login" element={<Login />}/>
+                                <Route path="/register" element={<Register />} />
+                            </Routes>
+                        </main>  
+                <Footer />
+            </AuthProvider>
         </div>
+        
     )
 }
 
