@@ -15,6 +15,7 @@
     display: flex;
     justify-content: center;
     margin-top: 60px;
+    margin-bottom: 50px;
 }
 
 .firstName-div{
@@ -115,9 +116,7 @@ a{
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;
-    touch-action: manipulation;
     transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-    user-select: none;
     vertical-align: middle;
 }
 
