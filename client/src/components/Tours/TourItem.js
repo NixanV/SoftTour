@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 export const TourItem = ({
     _id,
     destination,
-    description,
     author,
     imageUrl
 }) => {
