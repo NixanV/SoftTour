@@ -20,7 +20,7 @@ export const Header = () => {
           {user.accessToken ? (
             <>
               <li>
-                <a href="">Create Tour</a>
+                <Link to="/create">Create Tour</Link>
               </li>
               <li>
                 <a href="">Profile</a>

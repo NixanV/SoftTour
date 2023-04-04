@@ -1,39 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,300;1,400&display=swap');
 
-.catalog-tours{
+
+.create-form-wrapper{
+    background-color: #dbdbdb;
+    width: 550px;
+    position: relative;
+}
+
+.create-whole{
+    display: flex;
+    margin: 60px auto 70px auto;
+    font-family: "Source Serif Pro", Helvetica, sans-serif;
+    height: 380px;
+    width: 43%;
+}
+
+.create-form{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family:"Source Serif Pro", Helvetica, sans-serif;
-
+    width: 400px;
+    padding-top: 20px;
+    padding-left: 60px;
+    
 }
 
-.item{
-    background-color: white;
-    margin-top: 20px;
-    width: 700px;
-    border-radius: 12px;
-    height: 210px;
+#destination, #imageUrl{
+    font-size: 17px;
 }
 
-.catalog-img-wraper img{
-    float: left;
-    width: 250px;
-    height: 210px;
-    margin-right: 15px;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
+.destination-label, .imageUrl-label, .description-label{
+    font-size: 17px;
 }
 
-.item h2{
-    margin-top: 0px;
-}
-
-.details-button{
+.submit-button{
     position: absolute;
-    right: 20px;
-    bottom: -30px;
+    right: 50px;
+    bottom: 10px;
+    width: 150px;
     background: #5E5DF0;
     border-radius: 999px;
     box-shadow: #5E5DF0 0 10px 20px -10px;
@@ -49,11 +52,6 @@
     padding: 8px 18px;
     user-select: none;
     touch-action: manipulation;
-    width: fit-content;
     word-break: break-word;
     border: 0;
-}
-
-.information{
-    position: relative;
 }

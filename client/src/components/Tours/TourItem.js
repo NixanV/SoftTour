@@ -12,7 +12,7 @@ export const TourItem = ({
     
         <div className={styles["item"]}>
             <div className={styles["catalog-img-wraper"]}>
-                <img src={imageUrl} alt="" />
+                <img className={styles["image-t"]} src={imageUrl} alt="" />
                 <div className={styles["information"]}>
                     <h2>
                         {destination}

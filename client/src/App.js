@@ -10,6 +10,7 @@ import { TourDetail } from "./components/TourDetails/TourDetail";
 import { Tours } from "./components/Tours/Tours";
 import { AuthProvider } from './contexts/authContext'
 import * as tourService from './services/tourService';
+import { Create } from "./components/CreateTour/CreateTour";
 
 function App() {
     const [tours, setTours] = useState([]);
@@ -34,6 +35,7 @@ function App() {
                                 <Route path="/tours/:tourId" element={<TourDetail />} />
                                 <Route path="/login" element={<Login />}/>
                                 <Route path="/register" element={<Register />} />
+                                <Route path="/create" element={<Create />} />
                             </Routes>
                         </main>  
                 <Footer />
