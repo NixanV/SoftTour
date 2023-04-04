@@ -25,11 +25,13 @@ export const Create = () => {
 
     const onSubmitHandler = (e, tourInfo) => {
         e.preventDefault();
-        if(data.imageUrl)
+        if(!data.imageUrl.startsWith('https://')){
+            alert("Invalid url adress");
+        }
         try {
             service.createPost({...tourInfo, ownerId}, token)
                 .then(() => {
-                    navigate('/tours')
+                    navigate('/tours');
                     console.log(tourInfo)
                 })
         } catch (error) {
