@@ -14,11 +14,11 @@ export const createPost = (information, accessToken) => {
 }
 
 export const getAll = () => {
-    return fetch(baseUrl)
+    return fetch(authUrl)
         .then(res => res.json())
 }
 
 export const getOne = (tourId) => {
-    return  fetch(`${baseUrl}/${tourId}`)
+    return  fetch(`${authUrl}/${tourId}`)
                 .then(res => res.json())
 }
