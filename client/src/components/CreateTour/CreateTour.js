@@ -25,10 +25,12 @@ export const Create = () => {
 
     const onSubmitHandler = (e, tourInfo) => {
         e.preventDefault();
+        if(data.imageUrl)
         try {
             service.createPost({...tourInfo, ownerId}, token)
                 .then(() => {
                     navigate('/tours')
+                    console.log(tourInfo)
                 })
         } catch (error) {
             alert(error)
@@ -51,7 +53,7 @@ export const Create = () => {
                             required
                             />
 
-                            <label className={styles["imageUrl-label"]} for="imageUrl">Image Url</label>
+                            <label className={styles["imageUrl-label"]} htmlFor="imageUrl">Image Url</label>
                             <input
                             type="url"
                             name="imageUrl"
@@ -70,7 +72,7 @@ export const Create = () => {
                             onChange={(e) => changeHandler(e)}
                             required
                             ></textarea>  
-                            
+
                             <button className={styles["submit-button"]}>Submit</button>
                         </form>  
                     
