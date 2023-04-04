@@ -26,7 +26,7 @@ export const Register = () => {
     const submitHandler = (e, userInfo) => {
         e.preventDefault();
 
-        if(userInfo.password.length < 5 || !/[A-Z]/.test(userInfo.password) || !/[0-9]/.test(userInfo.password)){
+        if(userInfo.password.length < 6 || !/[A-Z]/.test(userInfo.password) || !/[0-9]/.test(userInfo.password)){
             alert("Not valid pasword")
         }
         else if(userInfo.password !== userInfo.conf_password){
@@ -59,25 +59,25 @@ export const Register = () => {
             <div className={styles["form-wrapper"]}>
                 <form onSubmit={(e) => submitHandler(e, data)} method="POST">
                     <div className={styles["firstName-div"]}>
-                        <label htmlFor="fName" className={styles["first-name-lbl"]}>
+                        <label htmlFor="first_name" className={styles["first-name-lbl"]}>
                         First Name
                         </label>
                         <input
                         type="text"
                         id={styles["fName"]}
-                        name="fName"
+                        name="first_name"
                         required
                         value={data.first_name}
                         onChange={(e) => changeHandler(e)} />
                     </div>
                     <div className={styles["lastName-div"]}>
-                        <label htmlFor="last-name" className={styles["last-name-lbl"]}>
+                        <label htmlFor="last_name" className={styles["last-name-lbl"]}>
                         Last Name
                         </label>
                         <input
                         type="text"
                         id={styles["last-name"]}
-                        name="last-name" 
+                        name="last_name" 
                         required
                         value={data.last_name}
                         onChange={(e) => changeHandler(e)}/>
@@ -103,14 +103,11 @@ export const Register = () => {
                         id={styles["password"]}
                         name="password" 
                         required
-                        value={data.email}
+                        value={data.password}
                         onChange={(e) => changeHandler(e)}/>
                     </div>
                     <div className={styles["conf-password-div"]}>
-                        <label
-                        htmlFor="confPassword"
-                        className={styles["conf-password-lbl"]}
-                        >
+                        <label htmlFor="conf_password" className={styles["conf-password-lbl"]}>
                         Confirm Password
                         </label>
                         <input
