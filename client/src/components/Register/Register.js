@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles/register.module.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import * as service from '../../services/userService'
+import { AuthContext } from "../../contexts/authContext"
 
 export const Register = () => {
     const navigate = useNavigate();
@@ -12,6 +14,8 @@ export const Register = () => {
         conf_password: ''
     })
 
+    const {userLogin} = useContext(AuthContext);
+
     const changeHandler = (ev) => {
         setData(state => ({
             ...state,
@@ -19,11 +23,41 @@ export const Register = () => {
         }));
     };
 
+    const submitHandler = (e, userInfo) => {
+        e.preventDefault();
+
+        if(userInfo.password.length < 5 || !/[A-Z]/.test(userInfo.password) || !/[0-9]/.test(userInfo.password)){
+            alert("Not valid pasword")
+        }
+        else if(userInfo.password !== userInfo.conf_password){
+
+            alert("Difference between password and confirm password")
+        } else {
+
+            const pattern = new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$")
+            try {
+                if(pattern.test(userInfo.email)){
+                    service.register(userInfo)
+                        .then(res => {
+                            if(!res.message){
+                                userLogin(res)
+                                console.log(res);
+                                navigate('/')
+                            }else{
+                                alert("Invalid email and password")
+                            }
+                        })
+                } 
+            } catch (error) {
+                alert(error)
+            }  
+        }
+    }
 
     return (
         <div className={styles["whole"]}>
             <div className={styles["form-wrapper"]}>
-                <form >
+                <form onSubmit={(e) => submitHandler(e, data)} method="POST">
                     <div className={styles["firstName-div"]}>
                         <label htmlFor="fName" className={styles["first-name-lbl"]}>
                         First Name
@@ -32,6 +66,7 @@ export const Register = () => {
                         type="text"
                         id={styles["fName"]}
                         name="fName"
+                        required
                         value={data.first_name}
                         onChange={(e) => changeHandler(e)} />
                     </div>
@@ -43,6 +78,7 @@ export const Register = () => {
                         type="text"
                         id={styles["last-name"]}
                         name="last-name" 
+                        required
                         value={data.last_name}
                         onChange={(e) => changeHandler(e)}/>
                     </div>
@@ -54,6 +90,7 @@ export const Register = () => {
                         type="email"
                         id={styles["email"]}
                         name="email"
+                        required
                         value={data.email} 
                         onChange={(e) => changeHandler(e)}/>
                     </div>
@@ -65,6 +102,7 @@ export const Register = () => {
                         type="password"
                         id={styles["password"]}
                         name="password" 
+                        required
                         value={data.email}
                         onChange={(e) => changeHandler(e)}/>
                     </div>
@@ -78,7 +116,8 @@ export const Register = () => {
                         <input
                         type="password"
                         id={styles["confPassword"]}
-                        name="confPassword"
+                        name="conf_password"
+                        required
                         value={data.conf_password}
                         onChange={(e) => changeHandler(e)}
                         />
