@@ -21,9 +21,10 @@ export const TourItem = ({
                     <h2>
                         {destination}
                     </h2>
-                    <p>
-                        For more information click "See more" button
-                    </p>
+                    {user.accessToken ? 
+                    <p>For more information click "See more" button </p> : 
+                    <p>Login or create account to see information about that tour</p>}
+                    
                     <p>
                         <span>
                            {author}

@@ -9,6 +9,7 @@ export const Tours = ({tours}) => {
     useEffect(() => {
         service.getAll()
             .then(res => setData(Object.values(res)));
+            
     })
 
     return (
