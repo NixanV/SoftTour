@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import * as tourService from "../../services/tourService";
 import styles from "./styles/details.module.css";
 import { AuthContext } from "../../contexts/authContext";
@@ -10,13 +10,15 @@ export const TourDetail = () => {
     const { tourId } = useParams();
     const [tour, setTour] = useState({});
     const {user} = useContext(AuthContext);
+    const token = user.accessToken;
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        tourService.getOne(tourId).then((result) => {
-        setTour(result);
-        });
+        tourService.getOne(tourId)
+            .then((result) => {
+                setTour(result);
+            });
     }, [tourId]);
 
 
@@ -29,12 +31,12 @@ export const TourDetail = () => {
             <h2 className={styles["heading"]}>Tour in {tour.destination}</h2>
             <p className={styles["paragraph-description"]}>{tour.description}</p>
             <h4 className={styles["author"]}>{tour.author}</h4>
-            {user.accessToken ? 
-            <button className={styles["edit-btn"]}><i className="fas fa-edit" />Edit</button> : 
-            null}
-
-            {user.accessToken ? 
-            <button className={styles["delete-btn"]}><i className="fas fa-trash-alt" />Delete</button> : 
+            {user._id === tour._ownerId ? 
+            <>
+                <button className={styles["edit-btn"]}><i className="fas fa-edit" />Edit</button> 
+                <Link className={styles["delete-btn"]} to={`delete/${tourId}`}><i className="fas fa-trash-alt" />Delete</Link>
+            </>
+            : 
             null}
 
             <button className={styles["back-button"]} onClick={() => navigate(-1)}>

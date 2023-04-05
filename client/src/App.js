@@ -12,6 +12,7 @@ import { AuthProvider } from './contexts/authContext'
 import * as tourService from './services/tourService';
 import { Create } from "./components/CreateTour/CreateTour";
 import { Logout } from "./components/Logout/Logout";
+import { Delete } from "./components/Delete/Delete";
 
 function App() {
     const [tours, setTours] = useState([]);
@@ -38,6 +39,8 @@ function App() {
                                 <Route path="/register" element={<Register />} />
                                 <Route path="/create" element={<Create />} />
                                 <Route path="/logout" element={<Logout />} />
+                                <Route path='/delete/:tourId' element={<Delete />} />
+                                {/* Todo: edit button route */}
                             </Routes>
                         </main>  
                 <Footer />
