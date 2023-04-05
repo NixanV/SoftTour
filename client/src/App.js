@@ -11,6 +11,7 @@ import { Tours } from "./components/Tours/Tours";
 import { AuthProvider } from './contexts/authContext'
 import * as tourService from './services/tourService';
 import { Create } from "./components/CreateTour/CreateTour";
+import { Logout } from "./components/Logout/Logout";
 
 function App() {
     const [tours, setTours] = useState([]);
@@ -36,6 +37,7 @@ function App() {
                                 <Route path="/login" element={<Login />}/>
                                 <Route path="/register" element={<Register />} />
                                 <Route path="/create" element={<Create />} />
+                                <Route path="/logout" element={<Logout />} />
                             </Routes>
                         </main>  
                 <Footer />

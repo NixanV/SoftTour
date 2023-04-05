@@ -26,7 +26,7 @@ export const Header = () => {
                 <a href="">Profile</a>
               </li>
               <li>
-                <a href="">Logout</a>
+                <Link to="/logout">Logout</Link>
               </li>
             </>
           ) : (

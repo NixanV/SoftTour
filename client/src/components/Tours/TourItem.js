@@ -1,5 +1,8 @@
+import { useContext } from 'react'
 import styles from './styles/tour.module.css'
 import {Link} from 'react-router-dom'
+import {AuthContext} from '../../contexts/authContext'
+
 
 export const TourItem = ({
     _id,
@@ -7,6 +10,7 @@ export const TourItem = ({
     author,
     imageUrl
 }) => {
+    const {user} = useContext(AuthContext)
     return(
     <>
     
@@ -25,7 +29,8 @@ export const TourItem = ({
                            {author}
                         </span>
                     </p>
-                    <Link to={`/tours/${_id}`} className={styles["details-button"]}>See more</Link>
+                    {user.accessToken ? <Link to={`/tours/${_id}`} className={styles["details-button"]}>See more</Link> : null}
+                    
             </div>
         </div>
     </div>
