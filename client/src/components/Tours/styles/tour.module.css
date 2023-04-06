@@ -57,3 +57,13 @@
 .information{
     position: relative;
 }
+
+
+.no-articles, .all-tours-heading{
+    text-align: center;
+    font-size: 34px;
+
+}
+.no-articles{
+    margin-bottom: 360px;
+}

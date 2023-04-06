@@ -21,6 +21,13 @@ export const TourDetail = () => {
             });
     }, [tourId]);
 
+    const onDeleteHandler = (tourId,  token) => {
+        tourService.deletePost(tourId, token)
+            .then(() => {
+                navigate('/tours')
+            })
+    }
+
 
     return (
         <div className={styles["all-info-wrapper"]}>
@@ -34,7 +41,7 @@ export const TourDetail = () => {
             {user._id === tour._ownerId ? 
             <>
                 <button className={styles["edit-btn"]}><i className="fas fa-edit" />Edit</button> 
-                <Link className={styles["delete-btn"]} to={`delete/${tourId}`}><i className="fas fa-trash-alt" />Delete</Link>
+                <button className={styles["delete-btn"]} onClick={() => onDeleteHandler(tourId, user.accessToken)}><i className="fas fa-trash-alt" />Delete</button>
             </>
             : 
             null}

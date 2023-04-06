@@ -24,7 +24,7 @@ export const getOne = (tourId) => {
 }
 
 export const deletePost = (tourId, accessToken) => {
-    return fetch(`${authUrl}/delete/${tourId}`, {
+    return fetch(`${authUrl}/${tourId}`, {
         method: "DELETE", 
         headers: {
             "X-Authorization": accessToken
