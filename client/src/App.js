@@ -11,6 +11,7 @@ import { Tours } from "./components/Tours/Tours";
 import { AuthProvider } from './contexts/authContext'
 import { Create } from "./components/CreateTour/CreateTour";
 import { Logout } from "./components/Logout/Logout";
+import { Edit } from "./components/Edit/Edit";
 
 function App() {
     return (
@@ -26,7 +27,7 @@ function App() {
                                 <Route path="/register" element={<Register />} />
                                 <Route path="/create" element={<Create />} />
                                 <Route path="/logout" element={<Logout />} />
-                                {/* Todo: edit button route */}
+                                <Route path="/edit/:tourId" element={<Edit />} />
                             </Routes>
                         </main>  
                 <Footer />

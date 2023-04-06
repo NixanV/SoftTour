@@ -32,3 +32,15 @@ export const deletePost = (tourId, accessToken) => {
     })
         .then(res => res.json())
 }
+
+export const editPost = (tourId, accessToken, data) => {
+    return fetch(`${authUrl}/${tourId}`, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': accessToken
+        },
+        body: JSON.stringify(data)
+    })
+        .then(res => res.json())
+}

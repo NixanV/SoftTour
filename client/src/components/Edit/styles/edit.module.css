@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,300;1,400&display=swap');
+
+
+
+.edit-form{
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    margin: 30px auto 40px auto;
+}
+
+.edit-form-wrapper{
+    position: relative;
+    background-color: #dbdbdb;
+    width: 510px;
+    height: 350px;
+    font-family: "Source Serif Pro", Helvetica, sans-serif;
+    margin: 60px auto 97px auto;
+}
+
+.edit-submit-btn{
+    position: absolute;
+    right: 180px;
+    bottom: 20px;
+    width: 150px;
+    background: #5E5DF0;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family:"Source Serif Pro", Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    touch-action: manipulation;
+    word-break: break-word;
+    border: 0;
+}
+
+.edit-submit-btn:hover{
+    background-color: #FFFFFF;
+    color: #5E5DF0;
+}

@@ -40,7 +40,7 @@ export const TourDetail = () => {
             <h4 className={styles["author"]}>{tour.author}</h4>
             {user._id === tour._ownerId ? 
             <>
-                <button className={styles["edit-btn"]}><i className="fas fa-edit" />Edit</button> 
+                <Link to={`/edit/${tourId}`} className={styles["edit-btn"]} ><i className="fas fa-edit" />Edit</Link> 
                 <button className={styles["delete-btn"]} onClick={() => onDeleteHandler(tourId, user.accessToken)}><i className="fas fa-trash-alt" />Delete</button>
             </>
             : 

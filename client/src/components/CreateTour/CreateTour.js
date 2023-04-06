@@ -45,7 +45,7 @@ export const Create = () => {
                 <div className={styles["create-form-wrapper"]}>
                         <form className={styles["create-form"]} onSubmit={(e) => onSubmitHandler(e, data)}>
                             <h2>Tell us about your last trip</h2>
-                            <label className={styles["destination-label"]} htmlFor="destination">Destination</label>
+                            <label className={styles["e-destination-label"]} htmlFor="destination">Destination</label>
                             <input
                             type="text"
                             name="destination"
@@ -55,7 +55,7 @@ export const Create = () => {
                             required
                             />
 
-                            <label className={styles["imageUrl-label"]} htmlFor="imageUrl">Image Url</label>
+                            <label className={styles["e-imageUrl-label"]} htmlFor="imageUrl">Image Url</label>
                             <input
                             type="url"
                             name="imageUrl"
@@ -65,7 +65,7 @@ export const Create = () => {
                             required
                             />
 
-                            <label className={styles["destination-label"]} htmlFor="description-label" >Description</label>
+                            <label className={styles["e-description-label"]} htmlFor="description-label" >Description</label>
                             <textarea
                             name="description"
                             col="2000"
