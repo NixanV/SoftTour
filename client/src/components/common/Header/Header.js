@@ -17,13 +17,13 @@ export const Header = () => {
           <li>
             <Link to="/tours">Tours</Link>
           </li>
-          {user.accessToken ? (
+          {user?.accessToken ? (
             <>
               <li>
                 <Link to="/create">Create Tour</Link>
               </li>
               <li>
-                <a href="">Profile</a>
+                <Link href="/profile">Profile</Link>
               </li>
               <li>
                 <Link to="/logout">Logout</Link>

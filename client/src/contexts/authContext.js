@@ -16,6 +16,7 @@ export const AuthProvider = ({children}) => {
     const userLogout = () => {
         localStorage.removeItem('authSession');
         setUser({});
+        localStorage.setItem('authSession', JSON.stringify({}))
     }
 
     return (
