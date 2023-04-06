@@ -44,7 +44,7 @@
     color: #FFFFFF;
     cursor: pointer;
     font-family:"Source Serif Pro", Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 24px;
     opacity: 1;
@@ -54,4 +54,9 @@
     touch-action: manipulation;
     word-break: break-word;
     border: 0;
+}
+
+.submit-button:hover{
+    background-color: #FFFFFF;
+    color: #5E5DF0;
 }

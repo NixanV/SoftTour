@@ -47,6 +47,12 @@ export const TourDetail = () => {
                     onClick={() => onDeleteHandler(tourId, user.accessToken)}>
                     <i className="fas fa-trash-alt" />Delete
                 </button>
+                
+            </>
+            : 
+            null}
+
+            {token ? 
                 <button 
                     className={styles["like-button"]} 
                     onClick={() => {setLiked(!liked); setClicked(true);}} 
@@ -55,9 +61,9 @@ export const TourDetail = () => {
                     <span>Like</span>
                     {liked && <span className={{ liked }}>d</span>}
                 </button>
-            </>
-            : 
-            null}
+                :
+                null
+            }
 
             <button className={styles["back-button"]} onClick={() => navigate(-1)}>
             <i className="fas fa-chevron-circle-left" />

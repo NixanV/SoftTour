@@ -132,6 +132,6 @@ i{
     border: 0;
 }
 
-.like-button:focus{
+.like-button:active{
     background-color: #159d4d;
 }
