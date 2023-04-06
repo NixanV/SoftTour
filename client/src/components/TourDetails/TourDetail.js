@@ -43,8 +43,14 @@ export const TourDetail = () => {
             {user._id === tour._ownerId ? 
             <>
                 <Link to={`/edit/${tourId}`} className={styles["edit-btn"]} ><i className="fas fa-edit" />Edit</Link> 
-                <button className={styles["delete-btn"]} onClick={() => onDeleteHandler(tourId, user.accessToken)}><i className="fas fa-trash-alt" />Delete</button>
-                <button className={styles["like-button"]} onClick={() => {setLiked(!liked); setClicked(true);}}>
+                <button className={styles["delete-btn"]} 
+                    onClick={() => onDeleteHandler(tourId, user.accessToken)}>
+                    <i className="fas fa-trash-alt" />Delete
+                </button>
+                <button 
+                    className={styles["like-button"]} 
+                    onClick={() => {setLiked(!liked); setClicked(true);}} 
+                    disabled={liked === true ? true : false}>
                     <i class="fas fa-thumbs-up" />
                     <span>Like</span>
                     {liked && <span className={{ liked }}>d</span>}
