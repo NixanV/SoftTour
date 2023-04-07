@@ -44,3 +44,5 @@ export const editPost = (tourId, accessToken, data) => {
     })
         .then(res => res.json())
 }
+
+

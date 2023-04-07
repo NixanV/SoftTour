@@ -1,11 +1,23 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import user_photo from './user-photo.png'
 import { AuthContext } from '../../contexts/authContext'
 import styles from './styles/profile.module.css'
+import * as service from '../../services/tourService'
+import { UserTourItem } from './UserTourItem'
+
 
 export const Profile = () => {
-    const {user} = useContext(AuthContext)
+    const {user} = useContext(AuthContext);
+    const userId = user._id;
+    const [posts, setPosts] = useState([]);
 
+    useEffect(() => {
+        service.getAll()
+            .then(res => setPosts(res.filter(x => x._ownerId === userId)))
+            
+    }, [userId])
+
+    
     return(
         <div className={styles["whole-info-wrapper"]}>
             <div className={styles["div-profile-wrapper"]}>
@@ -23,7 +35,16 @@ export const Profile = () => {
 
                 </div>
             </div>
-
+            {posts.length > 0 ? 
+                posts.map(post => (
+                    <li key={post._id}>
+                        <UserTourItem {...post}/> 
+                    </li>
+                ))
+                :
+                <h4>You don't have any publications</h4>
+        
+            }
         </div>
         
     )

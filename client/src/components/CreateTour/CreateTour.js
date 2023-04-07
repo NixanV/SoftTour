@@ -30,12 +30,13 @@ export const Create = () => {
 
     const onSubmitHandler = (e, tourInfo) => {
         e.preventDefault();
+
         if(tourInfo.destination.length < 3){
             setFormErrors(state => ({...state, destination: 'Destination should be atleast 3 charachters long'}))
         }
 
         if(tourInfo.imageUrl.length < 11 && !tourInfo.imageUrl.startsWith('https://')){
-            setFormErrors(state => ({...state, imageUrl: "Invalid email address"}))
+            setFormErrors(state => ({...state, imageUrl: "Invalid url address"}))
         }
         
         if(tourInfo.description.length < 10){
@@ -45,17 +46,17 @@ export const Create = () => {
         // if(!data.imageUrl.startsWith('https://')){
         //     alert("Invalid url adress");
         // }
-        if(formError.description || formError.imageUrl || formError.destination){
+        if(!formError.description || !formError.imageUrl || !formError.destination){
             try {
-            service.createPost({...tourInfo, ownerId}, token)
-                .then(() => {
+            service.createPost({...tourInfo, ownerId, likes:[]}, token)
+                .then((res) => {
+                    console.log(res)
                     navigate('/tours');
                 })
             } catch (error) {
                 alert(error)
             }
         }
-
     }
     
     return(

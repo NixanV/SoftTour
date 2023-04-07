@@ -132,6 +132,26 @@ i{
     border: 0;
 }
 
-.like-button:active{
-    background-color: #159d4d;
+.liked-btn{
+    position: absolute;
+    bottom: 30px;
+    left: 600px;
+    background: #159d4d;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: "Source Serif Pro", Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 12px;
+    user-select: none;
+    touch-action: manipulation;
+    width: 100px;
+    word-break: break-word;
+    border: 0;
 }

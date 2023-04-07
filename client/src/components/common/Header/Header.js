@@ -23,7 +23,7 @@ export const Header = () => {
                 <Link to="/create">Create Tour</Link>
               </li>
               <li>
-                <Link to="/profile">Profile</Link>
+                <Link to={`/profile/${user._id}`}>Profile</Link>
               </li>
               <li>
                 <Link to="/logout">Logout</Link>

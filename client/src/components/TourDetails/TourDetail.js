@@ -11,7 +11,8 @@ export const TourDetail = () => {
     const [tour, setTour] = useState({});
     const {user} = useContext(AuthContext);
     const token = user.accessToken;
-    const [liked, setLiked] = useState(null)
+    const userId = user._id;
+    const [liked, setLiked] = useState(false)
     const [clicked, setClicked] = useState(false);
 
     const navigate = useNavigate();
@@ -20,8 +21,9 @@ export const TourDetail = () => {
         tourService.getOne(tourId)
             .then((result) => {
                 setTour(result);
+                setLiked(result.likes.includes(userId))
             });
-    }, [tourId]);
+    }, [tourId, userId]);
 
     const onDeleteHandler = (tourId,  token) => {
         tourService.deletePost(tourId, token)
@@ -30,6 +32,16 @@ export const TourDetail = () => {
             })
     }
 
+    const likeHandler = (token, userId, data) => {
+         data.likes.push(userId)
+        tourService.editPost(tourId, token, data)
+            .then(res => {
+                setTour(res)
+                setLiked(true)
+            })
+
+    }
+    console.log(tour)
 
     return (
         <div className={styles["all-info-wrapper"]}>
@@ -54,10 +66,10 @@ export const TourDetail = () => {
 
             {token ? 
                 <button 
-                    className={styles["like-button"]} 
-                    onClick={() => {setLiked(!liked); setClicked(true);}} 
+                    className={liked ? styles["liked-btn"] : styles["like-button"]} 
+                    onClick={() => likeHandler(token, user._id, tour)} 
                     disabled={liked === true ? true : false}>
-                    <i class="fas fa-thumbs-up" />
+                    <i className="fas fa-thumbs-up" />
                     <span>Like</span>
                     {liked && <span className={{ liked }}>d</span>}
                 </button>

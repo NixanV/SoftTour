@@ -29,7 +29,7 @@ function App() {
                                 <Route path="/create" element={<Create />} />
                                 <Route path="/logout" element={<Logout />} />
                                 <Route path="/edit/:tourId" element={<Edit />} />
-                                <Route path="/profile" element={<Profile />} />
+                                <Route path="/profile/:profileId" element={<Profile />} />
                             </Routes>
                         </main>  
                 <Footer />
