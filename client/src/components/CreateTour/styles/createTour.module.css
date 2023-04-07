@@ -5,6 +5,7 @@
     background-color: #dbdbdb;
     width: 550px;
     position: relative;
+    height: 430px;
 }
 
 .create-whole{
@@ -59,4 +60,14 @@
 .submit-button:hover{
     background-color: #FFFFFF;
     color: #5E5DF0;
+}
+
+.destination-div-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.error-p{
+    color: red;
+    margin: 0px;
 }

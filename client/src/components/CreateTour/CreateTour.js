@@ -15,6 +15,11 @@ export const Create = () => {
         description: "",
     })
 
+    const [formError,  setFormErrors] = useState({
+        destination: '',
+        imageUrl: '',
+        description: ''
+    })
     const changeHandler = (e) => {
         setData(state => ({
             ...state,
@@ -25,17 +30,33 @@ export const Create = () => {
 
     const onSubmitHandler = (e, tourInfo) => {
         e.preventDefault();
-        if(!data.imageUrl.startsWith('https://')){
-            alert("Invalid url adress");
+
+        if(tourInfo.destination.length < 3){
+            setFormErrors(state => ({...state, destination: 'Destination should be atleast 3 charachters long'}))
         }
-        try {
+        
+        if(tourInfo.imageUrl.length < 11 && !tourInfo.imageUrl.startsWith('https://')){
+            setFormErrors(state => ({...state, imageUrl: "Invalid email address"}))
+        }
+        
+        if(tourInfo.description.length < 10){
+            setFormErrors(state => ({...state, description: "Description should be atleast one sentence"}))
+        }
+
+        console.log(tourInfo.destination)
+        // if(!data.imageUrl.startsWith('https://')){
+        //     alert("Invalid url adress");
+        // }
+        if(formError.description || formError.imageUrl || formError.destination){
+            try {
             service.createPost({...tourInfo, ownerId}, token)
                 .then(() => {
                     navigate('/tours');
                     console.log(tourInfo)
                 })
-        } catch (error) {
-            alert(error)
+            } catch (error) {
+                alert(error)
+            }
         }
     }
     
@@ -45,25 +66,40 @@ export const Create = () => {
                 <div className={styles["create-form-wrapper"]}>
                         <form className={styles["create-form"]} onSubmit={(e) => onSubmitHandler(e, data)}>
                             <h2>Tell us about your last trip</h2>
-                            <label className={styles["e-destination-label"]} htmlFor="destination">Destination</label>
-                            <input
-                            type="text"
-                            name="destination"
-                            id="destination"
-                            onChange={(e) => changeHandler(e)}
-                            value={data.destination}
-                            required
-                            />
+                            <div className={styles["destination-div-wrapper"]}>
+                                <label className={styles["e-destination-label"]} htmlFor="destination">Destination</label>
+                                <input
+                                type="text"
+                                name="destination"
+                                id="destination"
+                                onChange={(e) => changeHandler(e)}
+                                value={data.destination}
+                                required
+                                />
+
+                                
+                            </div>
+                            {formError.destination && 
+                                    <p className={styles["error-p"]}>
+                                        {formError.destination}
+                                    </p>
+                            }
 
                             <label className={styles["e-imageUrl-label"]} htmlFor="imageUrl">Image Url</label>
                             <input
-                            type="url"
+                            type="text"
                             name="imageUrl"
                             id="imageUrl"
                             onChange={(e) => changeHandler(e)}
                             value={data.imageUrl}
                             required
                             />
+
+                            {formError.imageUrl && 
+                                    <p className={styles["error-p"]}>
+                                        {formError.imageUrl}
+                                    </p>
+                            }
 
                             <label className={styles["e-description-label"]} htmlFor="description-label" >Description</label>
                             <textarea
@@ -74,6 +110,11 @@ export const Create = () => {
                             onChange={(e) => changeHandler(e)}
                             required
                             ></textarea>  
+                            {formError.description && 
+                                    <p className={styles["error-p"]}>
+                                        {formError.description}
+                                    </p>
+                            }
 
                             <button className={styles["submit-button"]}>Submit</button>
                         </form>  
