@@ -12,6 +12,7 @@ import { AuthProvider } from './contexts/authContext'
 import { Create } from "./components/CreateTour/CreateTour";
 import { Logout } from "./components/Logout/Logout";
 import { Edit } from "./components/Edit/Edit";
+import { Profile } from "./components/Profile/Profile";
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                                 <Route path="/create" element={<Create />} />
                                 <Route path="/logout" element={<Logout />} />
                                 <Route path="/edit/:tourId" element={<Edit />} />
+                                <Route path="/profile" element={<Profile />} />
                             </Routes>
                         </main>  
                 <Footer />

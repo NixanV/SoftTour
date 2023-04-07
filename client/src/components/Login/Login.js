@@ -39,7 +39,7 @@ export const Login = () => {
                                 userLogin(res)
                                 navigate('/')
                             }else{
-                                alert("Invalid email and password")
+                                alert("Invalid email or password")
                             }
                         })
                 } 

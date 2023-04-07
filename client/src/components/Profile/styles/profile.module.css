@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,600;0,700;1,300;1,400&display=swap');
+
+
+
+.div-profile-wrapper{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    width: 45%;
+    height: 300px;
+    margin: 47px auto 160px 50px;
+    border-radius: 130px;
+    font-family: "Source Serif Pro", Helvetica, sans-serif;
+    font-size: 21px;
+}
+
+.image-style{
+    width: 300px;
+    height: 300px;
+    border-radius: 130px;
+}
+
+.information-div{
+    margin-left: 40px;
+}
+
+.names{
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+    justify-content: space-around;
+}
+
+.email-h5{
+    margin-left: 20px;
+}
+
+.whole-info-wrapper{
+    display: flex;
+    flex-direction: row;
+}
