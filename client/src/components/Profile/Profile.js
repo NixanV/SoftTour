@@ -17,7 +17,7 @@ export const Profile = () => {
             
     }, [userId])
 
-    
+    console.log(posts);
     return(
         <div className={styles["whole-info-wrapper"]}>
             <div className={styles["div-profile-wrapper"]}>
@@ -35,16 +35,21 @@ export const Profile = () => {
 
                 </div>
             </div>
-            {posts.length > 0 ? 
-                posts.map(post => (
-                    <li key={post._id}>
-                        <UserTourItem {...post}/> 
-                    </li>
-                ))
-                :
-                <h4>You don't have any publications</h4>
+            <div className={styles["post-profile-div"]}>
+                {posts.length > 0 ? 
+                    posts.map(post => (
+
+                            <li className={styles["li-profile-tours"]} key={post._id}>
+                                <UserTourItem {...post}/> 
+                            </li>
+                        
+                    ))
+                    :
+                    <h4>You don't have any publications</h4>
         
-            }
+                }
+            </div>
+            
         </div>
         
     )

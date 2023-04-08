@@ -1,13 +1,13 @@
 import styles from './styles/profile.module.css'
 
 export const UserTourItem = ({
-    destionation,
+    destination,
     imageUrl
 }) => {
     return (
         <div className={styles["tour-item-profile"]}>
-            <img src={imageUrl} alt="" />
-            <h2 className={styles["profile-destination"]}>{destionation}</h2>
+            <img className={styles["image-tour-profile"]}  src={imageUrl} alt="" />
+            <h2 className={styles["profile-destination"]}>{destination}</h2>
         </div>
     )
 }

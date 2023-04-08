@@ -12,8 +12,7 @@ export const TourDetail = () => {
     const {user} = useContext(AuthContext);
     const token = user.accessToken;
     const userId = user._id;
-    const [liked, setLiked] = useState(false)
-    const [clicked, setClicked] = useState(false);
+    const [liked, setLiked] = useState(false);
 
     const navigate = useNavigate();
 

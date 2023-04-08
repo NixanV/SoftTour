@@ -8,7 +8,7 @@
     flex-direction: row;
     width: 45%;
     height: 300px;
-    margin: 47px auto 160px 50px;
+    margin: 47px 50px 160px 50px;
     border-radius: 130px;
     font-family: "Source Serif Pro", Helvetica, sans-serif;
     font-size: 21px;
@@ -39,4 +39,36 @@
     display: flex;
     flex-direction: row;
     background-color: #f7f5f4;
+    justify-content: space-between;
+}
+
+.tour-item-profile{
+    /* display: flex;
+    flex-direction: column; */
+    width: 200px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.image-tour-profile{
+    width: 200px;
+    height: 200px;  
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.li-profile-tours{
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+
+.post-profile-div{
+    display: flex;
+    flex-direction: column;
+    margin-right: 190px;
+}
+
+.profile-destination{
+    margin-left: 50px;
 }
