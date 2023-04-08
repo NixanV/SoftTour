@@ -9,6 +9,12 @@
 
 }
 
+.all-tours-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .item{
     background-color: white;
     margin-top: 20px;

@@ -12,7 +12,7 @@ export const Tours = () => {
     }, [])
 
     return (
-        <section>
+        <section className={styles["all-tours-section"]}>
             <h1 className={styles["all-tours-heading"]}>All Tours</h1>
 
             {data[0] === 404 || data.length === 0 ? 
