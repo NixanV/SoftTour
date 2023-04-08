@@ -45,4 +45,5 @@
 .edit-submit-btn:hover{
     background-color: #FFFFFF;
     color: #5E5DF0;
+    transition: all .6s ease;
 }
