@@ -6,7 +6,6 @@ import { AuthContext } from "../../contexts/authContext";
 
 
 export const TourDetail = () => {
-  //const [author, setAuthor] = useState('');
     const { tourId } = useParams();
     const [tour, setTour] = useState({});
     const {user} = useContext(AuthContext);
@@ -32,15 +31,14 @@ export const TourDetail = () => {
     }
 
     const likeHandler = (token, userId, data) => {
-         data.likes.push(userId)
+        data.likes.push(userId)
         tourService.editPost(tourId, token, data)
             .then(res => {
                 setTour(res)
                 setLiked(true)
             })
-
     }
-    console.log(tour)
+
 
     return (
         <div className={styles["all-info-wrapper"]}>
@@ -66,11 +64,11 @@ export const TourDetail = () => {
             {token ? 
                 <button 
                     className={liked ? styles["liked-btn"] : styles["like-button"]} 
-                    onClick={() => likeHandler(token, user._id, tour)} 
+                    onClick={() => likeHandler(token, userId, tour)} 
                     disabled={liked === true ? true : false}>
                     <i className="fas fa-thumbs-up" />
                     <span>Like</span>
-                    {liked && <span className={{ liked }}>d</span>}
+                    {liked && <span className={ liked }>d</span>}
                 </button>
                 :
                 null

@@ -21,6 +21,7 @@
     width: 700px;
     border-radius: 12px;
     height: 210px;
+    position: relative;
 }
 
 .catalog-img-wraper img{
@@ -39,7 +40,7 @@
 .details-button{
     position: absolute;
     right: 20px;
-    bottom: -30px;
+    bottom: -90px;
     background: #5E5DF0;
     border-radius: 999px;
     box-shadow: #5E5DF0 0 10px 20px -10px;

@@ -29,7 +29,7 @@ export const Edit = () => {
             alert("Invalid url adress");
         }
         try {
-            service.editPost(tourId, token, {...data})
+            service.editPost(tourId, token, {...data, likes:[]})
                 .then(() => {
                     navigate('/tours');
                     console.log(data)
