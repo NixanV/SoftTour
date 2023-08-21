@@ -17,7 +17,7 @@ export const Profile = () => {
             
     }, [userId])
 
-    console.log(posts);
+    //console.log(posts);
     return(
         <div className={styles["whole-info-wrapper"]}>
             <div className={styles["div-profile-wrapper"]}>

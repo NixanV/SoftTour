@@ -45,7 +45,7 @@ export const Login = () => {
                 } 
             }
             catch{
-                alert('error message')
+                alert('error message');
             }
             
         }

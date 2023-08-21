@@ -23,12 +23,7 @@ export const TourItem = ({
                     {user.accessToken ? 
                     <p>For more information click "See more" button </p> : 
                     <p>Login or create account to see information about that tour</p>}
-                        
-                    <p>
-                        <span>
-                            {user.first_name} {user.last_name}
-                        </span> 
-                    </p>
+                    
                     {user.accessToken ? <Link to={`/tours/${_id}`} className={styles["details-button"]}>See more</Link> : null}
                         
                 </div>

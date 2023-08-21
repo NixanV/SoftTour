@@ -27,7 +27,7 @@ export const Register = () => {
         e.preventDefault();
 
         if(userInfo.password.length < 6 || !/[A-Z]/.test(userInfo.password) || !/[0-9]/.test(userInfo.password)){
-            alert("Not valid pasword")
+            alert("Password must be more than 6 letters and must have at least one upper letter and at least one number!")
         }
         else if(userInfo.password !== userInfo.conf_password){
 
